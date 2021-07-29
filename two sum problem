@@ -1,0 +1,14 @@
+
+#time complexity is O(n) as it search the dictionary in linear basis and the space complexity is O(n) as the map/dictionary grows length of the list which is basically n .
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        prev=dict()
+        for i in range (len(nums)):
+            com=target-nums[i]
+            if nums[i] in prev:
+                    return{prev[nums[i]],i}
+            else:
+                prev[com]=i
