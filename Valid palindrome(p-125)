@@ -1,0 +1,18 @@
+#space complexity is O(n) & time complexity is also O(n)
+
+
+class Solution:
+    def isPalindrome(self, s):
+        p=''.join(char for char in s if char.isalnum()) #O(n)+O(n)
+        p=p.lower()
+        st=0
+        e=len(p)-1
+        while(st<e): #O(n)
+            if(p[st]!=p[e]):
+                return 0
+            st+=1
+            e-=1
+            
+        return 1
+    
+        
