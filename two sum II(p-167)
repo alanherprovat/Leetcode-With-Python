@@ -1,0 +1,15 @@
+#Here time complexity is O(n) and the space complexity is O(1) because no extra memory has use
+
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        s=0
+        e=len(numbers)-1
+        while s<e:           #O(n)
+            f=numbers[s]+numbers[e]
+            if f==target:
+                return [s+1,e+1]
+            elif(f>target):
+                e-=1;
+            else:
+                s+=1
+        return[0,0]
