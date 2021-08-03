@@ -1,0 +1,26 @@
+#time complexity is O(logn) & space complexity is O(1)
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        t=len(nums)
+        h=int(t/2)
+        i=0
+        if(nums[h]==target):
+            return h
+        elif nums[h]<target:
+            m=h+1
+            while m<t:
+                
+                if nums[m]>=target:
+                    return m
+                m+=1    
+                
+            return m
+        else:
+            while i<h:
+                if nums[i]>=target:
+                    return i
+                i+=1
+                
+            
+            return i
+                
