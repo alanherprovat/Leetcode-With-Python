@@ -1,0 +1,42 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        #evaluating digits Array by adding 1 to the last elements with O(n) and if all the  elements of the list becomes zero then 1 is append to the list 
+        c=0
+        i=len(digits)-1
+        if(digits[i]+1)<=9:
+            digits[i]=digits[i]+1
+        else: 
+            c=1
+            digits[i]=0
+            j=i-1
+            s=0
+            while j>=0:
+                if(c>0):
+                    s=1+digits[j]
+                if s>9:
+                    c=1
+                    digits[j]=0
+                else:
+                    c=0
+                    digits[j]=s
+                    break
+                    
+                j-=1
+        #if there is carry after iteration we insert the carry to the last new element of  the list 
+        if c>0:
+            digits.append(1)
+            f=0
+            e=len(digits)-1
+        #After that reversing the list will generate the exact answer with time complexity  O(n) and space com. O(1)
+            while f<e:
+                t1=digits[e]
+                t2=digits[f]
+                digits[f]=t1
+                digits[e]=t2
+                f+=1
+                e-=1
+        
+            
+        
+        return digits
+                
