@@ -3,7 +3,7 @@
 
 
 
-<h3>Class-1(array) Img(43-45)::</h3>
+<h3><b>Class-1(array) ::</b></h3>
 
 ![IMG_1643](https://user-images.githubusercontent.com/78719429/127686201-59472f53-2bc5-4e42-8335-c0e38b790c9b.jpg)
 
