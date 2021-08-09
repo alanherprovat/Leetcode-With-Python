@@ -1,0 +1,18 @@
+# two pointer approach with tc O(n) and sc is O(1)
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:        
+       l=0
+       r=1
+       csum=0
+       pro=0
+       while(r<len(prices)):
+        if(prices[l]<prices[r]):
+            csum+=prices[r]-prices[l]
+        
+        l=r
+        r=l+1
+        pro=max(pro,csum)
+        
+       return pro 
+            
