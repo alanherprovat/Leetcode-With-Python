@@ -1,0 +1,19 @@
+# tc O(n^2) and sc O(n^2)
+
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        #creating list within list and the first row is always 1
+        re=[[1]]
+        for i in range(numRows-1): # already one row is in the list
+            tem=[0]+re[-1]+[0] #appending zeros at the beginning and the end of the re list and store it to another tem list
+            row=[]
+            
+            for j in range(len(re[-1])+1):# here next row will be te length of previous row (re[-1])+1
+                row.append(tem[j]+tem[j+1]) # creating the next row 
+                
+            #inserting row to the re list
+            re.append(row)
+        return re    
+                
+            
+        
