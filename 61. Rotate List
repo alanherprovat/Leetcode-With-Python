@@ -1,0 +1,31 @@
+#linear searching so tc is O(n) andd there is no extra memory is used so sc is O(1)
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        if not head:
+            return None
+        len=1
+        tail=head
+        while(tail.next):
+            tail=tail.next
+            len+=1
+        #if the no of rotation is same as the length is being end up with the same list
+        p=k%len
+        print(p)
+        if(p==0):
+            return head
+        cur=head
+        #finding the postion to break the list
+        p=len-p-1
+        while(p):
+            cur=cur.next
+            p-=1
+        
+        newhead=cur.next
+        cur.next=None
+        tail.next=head
+        return newhead
