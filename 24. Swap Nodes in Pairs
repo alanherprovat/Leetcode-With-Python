@@ -1,0 +1,29 @@
+#time complexity is O(n) and space com. Is O(n or 1?)
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy=ListNode(0,head)
+        
+        
+        pre=dummy
+        cur=head
+        while(cur and cur.next):
+            #pointers
+            nextpair=cur.next.next
+            secondnode=cur.next
+            #swapping
+            secondnode.next=cur
+            cur.next=nextpair
+            pre.next=secondnode
+            #increment postion
+            pre=cur
+            cur=nextpair
+            
+            
+        return dummy.next
+            
+        
